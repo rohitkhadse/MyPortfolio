@@ -18,6 +18,7 @@ public class SkillFragment extends Fragment {
     private ArrayList<String> mArrayList,j2eeArrayList;
     private View view;
 
+    //String arrays all skills
     String[] language = { "Java", "R Language", "C", "C++"};
     String[] j2EE = {"Java 1.6-1.8","JDBC","Spring", "Spring MVC", "Spring Boot", "JSP, Servlet"};
 
