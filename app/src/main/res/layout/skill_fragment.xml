@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.myportfolio.SkillFragment">
 
-
+    <!--Language Skill Set-->
     <TextView
         android:id="@+id/languageTV"
         android:layout_width="wrap_content"
@@ -26,6 +26,7 @@
       android:layout_below="@+id/languageTV">
    </ListView>
 
+    <!--Language Skill Set-->
     <TextView
         android:id="@+id/j2EETV"
         android:layout_width="wrap_content"
@@ -42,6 +43,82 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@+id/j2EETV">
+   </ListView>
+
+    <!--Web Technologies Tools Skill Set-->
+    <TextView
+        android:id="@+id/webTechTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/j2EEListview"
+        android:text="Java and J2EE Technologies"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+      android:id="@+id/webTechListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/webTechTV">
+   </ListView>
+
+    <!--Database And ORM Skill Set-->
+    <TextView
+        android:id="@+id/dataORMTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/webTechListview"
+        android:text="Java and J2EE Technologies"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+      android:id="@+id/dataORMListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/dataORMTV">
+   </ListView>
+
+    <!--Hosting Platform Skill Set-->
+    <TextView
+        android:id="@+id/hostPlatTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dataORMListview"
+        android:text="Java and J2EE Technologies"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+      android:id="@+id/hostPlatListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/hostPlatTV">
+   </ListView>
+
+    <!--IDE Skill Set-->
+    <TextView
+        android:id="@+id/iDETV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hostPlatListview"
+        android:text="Java and J2EE Technologies"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+      android:id="@+id/iDEListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/iDETV">
    </ListView>
 
 </RelativeLayout>

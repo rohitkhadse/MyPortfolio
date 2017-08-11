@@ -15,12 +15,18 @@ import java.util.Arrays;
 
 public class SkillFragment extends Fragment {
 
-    private ArrayList<String> mArrayList,j2eeArrayList;
+    private ArrayList<String> mArrayList,j2eeArrayList,webTArrayList,dbORMArrayList,hostArrayList,ideArrayList;
     private View view;
 
     //String arrays all skills
     String[] language = { "Java", "R Language", "C", "C++"};
     String[] j2EE = {"Java 1.6-1.8","JDBC","Spring", "Spring MVC", "Spring Boot", "JSP, Servlet"};
+    String[] webTechTools = {"HTML", "CSS", "JavaScript","PHP"};
+    String[] dbORM = {"MySQL", "Hibernate", "AndroidORM", "ORMLite", "FireBase"};
+    String[] hostingPlatform = {"AWS", "Digital Ocean", "Cloudinary", "Google Cloud"};
+    String[] iDE = {"NetBeans", "Eclipse", "Android Studio", "RStudio", "Brackets" , "Spring Tool Suite"};
+
+
 
     public SkillFragment() {
         // Required empty public constructor
@@ -46,7 +52,7 @@ public class SkillFragment extends Fragment {
         mArrayList = new ArrayList<>(Arrays.asList(language));
         j2eeArrayList = new ArrayList<>(Arrays.asList(j2EE));
 
-
+        //Array Adapter for Language
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(),
                 R.layout.skill_list,
@@ -56,6 +62,7 @@ public class SkillFragment extends Fragment {
 
         listView.setAdapter(adapter);
 
+        //Array Adapter for J2EE
         ArrayAdapter<String> adapterJ2EE = new ArrayAdapter<>(
                 getContext(),
                 R.layout.skill_list,
