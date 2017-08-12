@@ -1,15 +1,15 @@
 package com.myportfolio;
 
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView;
+
+import com.myportfolio.adpater.SkillAdapter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -43,93 +43,37 @@ public class SkillFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        if (view == null){
+            view = inflater.inflate(R.layout.skill_fragment, container, false);
+        }
+        else {
+            ViewGroup parent  = (ViewGroup)view.getParent();
+            parent.removeView(view);
+        }
 
-         view = inflater.inflate(R.layout.skill_fragment, container, false);
+        ListView listView = (ListView) view.findViewById(R.id.list_view);
 
-        //Listview implementation
-        languageListView = (ListView) view.findViewById(R.id.languageListview);
-        j2eeListView = (ListView) view.findViewById(R.id.j2EEListview);
-        webTechListview = (ListView) view.findViewById(R.id.webTechListview);
-        dataORMListview = (ListView) view.findViewById(R.id.dataORMListview);
-        hostPlatListview = (ListView) view.findViewById(R.id.hostPlatListview);
-        iDEListview = (ListView) view.findViewById(R.id.iDEListview);
+        ArrayList<Object> list = new ArrayList<>();
+        list.add(new String("Language"));
+        list.add(new SkillItem("Java",R.drawable.rating90));
+        list.add(new SkillItem("C",R.drawable.rating60));
+        list.add(new SkillItem("C++",R.drawable.rating70));
+        list.add(new SkillItem("R",R.drawable.rating40));
+
+        list.add(new String("Java and J2EE Technologies"));
+        list.add(new SkillItem("Java 1.6-1.8",R.drawable.rating90));
+        list.add(new SkillItem("JDBC",R.drawable.rating60));
+        list.add(new SkillItem("Spring",R.drawable.rating70));
+        list.add(new SkillItem("Spring Boot",R.drawable.rating80));
+
+        list.add(new String("Database and ORM"));
+        list.add(new SkillItem("MySQL",R.drawable.rating90));
+        list.add(new SkillItem("Hibernate,",R.drawable.rating60));
+        list.add(new SkillItem("AndroidORM",R.drawable.rating70));
+        list.add(new SkillItem("FireBase",R.drawable.rating80));
 
 
-        //ArrayList implementation
-        mArrayList = new ArrayList<>(Arrays.asList(language));
-        j2eeArrayList = new ArrayList<>(Arrays.asList(j2EE));
-        webTArrayList = new ArrayList<>(Arrays.asList(webTechTools));
-        dbORMArrayList = new ArrayList<>(Arrays.asList(dbORM));
-        hostArrayList = new ArrayList<>(Arrays.asList(hostingPlatform));
-        ideArrayList = new ArrayList<>(Arrays.asList(iDE));
-
-        ///Array Adapter
-
-        //Array Adapter for Language
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                mArrayList
-        );
-
-        languageListView.setAdapter(adapter);
-        languageListView.setScrollContainer(false);
-
-        //Array Adapter for J2EE
-        ArrayAdapter<String> adapterJ2EE = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                j2eeArrayList
-        );
-
-        j2eeListView.setAdapter(adapterJ2EE);
-        j2eeListView.setScrollContainer(false);
-
-        //Array Adapter for Web Technology Tools
-        ArrayAdapter<String> adapterDBORM = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                dbORMArrayList
-        );
-
-        dataORMListview.setAdapter(adapterDBORM);
-
-        //Array Adapter for Database and ORM
-        ArrayAdapter<String> adapterWebTech = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                webTArrayList
-        );
-
-        webTechListview.setAdapter(adapterWebTech);
-        webTechListview.setScrollContainer(false);
-
-        //Array Adapter for Hosting Platforms
-        ArrayAdapter<String> adapterHostPlat = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                hostArrayList
-        );
-
-        hostPlatListview.setAdapter(adapterHostPlat);
-        hostPlatListview.setScrollContainer(false);
-
-        //Array Adapter for IDE
-        ArrayAdapter<String> adapterIDE = new ArrayAdapter<>(
-                getContext(),
-                R.layout.skill_list,
-                R.id.skill_list_item,
-                ideArrayList
-        );
-
-        iDEListview.setAdapter(adapterIDE);
-        iDEListview.setScrollContainer(false);
-
+        listView.setAdapter(new SkillAdapter(getContext(),list));
         // Inflate the layout for this fragment
         return view;
     }
