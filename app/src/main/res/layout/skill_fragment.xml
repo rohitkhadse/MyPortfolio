@@ -26,7 +26,7 @@
       android:layout_below="@+id/languageTV">
    </ListView>
 
-    <!--Language Skill Set-->
+    <!--j2ee Skill Set-->
     <TextView
         android:id="@+id/j2EETV"
         android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/j2EEListview"
-        android:text="Java and J2EE Technologies"
+        android:text="Web Technology Tools"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"

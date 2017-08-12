@@ -17,6 +17,7 @@ public class SkillFragment extends Fragment {
 
     private ArrayList<String> mArrayList,j2eeArrayList,webTArrayList,dbORMArrayList,hostArrayList,ideArrayList;
     private View view;
+    ListView languageListView,j2eeListView,webTechListview,dataORMListview,hostPlatListview,iDEListview;
 
     //String arrays all skills
     String[] language = { "Java", "R Language", "C", "C++"};
@@ -45,10 +46,16 @@ public class SkillFragment extends Fragment {
 
          view = inflater.inflate(R.layout.skill_fragment, container, false);
 
+        //Listview implementation
+        languageListView = (ListView) view.findViewById(R.id.languageListview);
+        j2eeListView = (ListView) view.findViewById(R.id.j2EEListview);
+        webTechListview = (ListView) view.findViewById(R.id.webTechListview);
+        dataORMListview = (ListView) view.findViewById(R.id.dataORMListview);
+        hostPlatListview = (ListView) view.findViewById(R.id.hostPlatListview);
+        iDEListview = (ListView) view.findViewById(R.id.iDEListview);
 
-        ListView listView = (ListView) view.findViewById(R.id.languageListview);
-        ListView j2eeListView = (ListView) view.findViewById(R.id.j2EEListview);
 
+        //ArrayList implementation
         mArrayList = new ArrayList<>(Arrays.asList(language));
         j2eeArrayList = new ArrayList<>(Arrays.asList(j2EE));
 
@@ -60,7 +67,7 @@ public class SkillFragment extends Fragment {
                 mArrayList
         );
 
-        listView.setAdapter(adapter);
+        languageListView.setAdapter(adapter);
 
         //Array Adapter for J2EE
         ArrayAdapter<String> adapterJ2EE = new ArrayAdapter<>(
