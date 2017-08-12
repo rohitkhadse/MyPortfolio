@@ -63,6 +63,7 @@ public class SkillFragment extends Fragment {
         hostArrayList = new ArrayList<>(Arrays.asList(hostingPlatform));
         ideArrayList = new ArrayList<>(Arrays.asList(iDE));
 
+        ///Array Adapter
 
         //Array Adapter for Language
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -73,6 +74,7 @@ public class SkillFragment extends Fragment {
         );
 
         languageListView.setAdapter(adapter);
+        languageListView.setScrollContainer(false);
 
         //Array Adapter for J2EE
         ArrayAdapter<String> adapterJ2EE = new ArrayAdapter<>(
@@ -83,6 +85,50 @@ public class SkillFragment extends Fragment {
         );
 
         j2eeListView.setAdapter(adapterJ2EE);
+        j2eeListView.setScrollContainer(false);
+
+        //Array Adapter for Web Technology Tools
+        ArrayAdapter<String> adapterDBORM = new ArrayAdapter<>(
+                getContext(),
+                R.layout.skill_list,
+                R.id.skill_list_item,
+                dbORMArrayList
+        );
+
+        dataORMListview.setAdapter(adapterDBORM);
+
+        //Array Adapter for Database and ORM
+        ArrayAdapter<String> adapterWebTech = new ArrayAdapter<>(
+                getContext(),
+                R.layout.skill_list,
+                R.id.skill_list_item,
+                webTArrayList
+        );
+
+        webTechListview.setAdapter(adapterWebTech);
+        webTechListview.setScrollContainer(false);
+
+        //Array Adapter for Hosting Platforms
+        ArrayAdapter<String> adapterHostPlat = new ArrayAdapter<>(
+                getContext(),
+                R.layout.skill_list,
+                R.id.skill_list_item,
+                hostArrayList
+        );
+
+        hostPlatListview.setAdapter(adapterHostPlat);
+        hostPlatListview.setScrollContainer(false);
+
+        //Array Adapter for IDE
+        ArrayAdapter<String> adapterIDE = new ArrayAdapter<>(
+                getContext(),
+                R.layout.skill_list,
+                R.id.skill_list_item,
+                ideArrayList
+        );
+
+        iDEListview.setAdapter(adapterIDE);
+        iDEListview.setScrollContainer(false);
 
         // Inflate the layout for this fragment
         return view;

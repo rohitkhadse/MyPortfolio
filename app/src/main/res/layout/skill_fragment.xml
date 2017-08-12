@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
     tools:context="com.myportfolio.SkillFragment">
+
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_gravity="center"
+         android:orientation="vertical">
+
+
 
     <!--Language Skill Set-->
     <TextView
@@ -70,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/webTechListview"
-        android:text="Java and J2EE Technologies"
+        android:text="Database and ORM"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -89,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dataORMListview"
-        android:text="Java and J2EE Technologies"
+        android:text="Hosting Platforms"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -108,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/hostPlatListview"
-        android:text="Java and J2EE Technologies"
+        android:text="IDE"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -121,4 +130,6 @@
       android:layout_below="@+id/iDETV">
    </ListView>
 
-</RelativeLayout>
+     </LinearLayout>
+
+</ScrollView>
