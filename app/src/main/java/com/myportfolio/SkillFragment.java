@@ -58,6 +58,11 @@ public class SkillFragment extends Fragment {
         //ArrayList implementation
         mArrayList = new ArrayList<>(Arrays.asList(language));
         j2eeArrayList = new ArrayList<>(Arrays.asList(j2EE));
+        webTArrayList = new ArrayList<>(Arrays.asList(webTechTools));
+        dbORMArrayList = new ArrayList<>(Arrays.asList(dbORM));
+        hostArrayList = new ArrayList<>(Arrays.asList(hostingPlatform));
+        ideArrayList = new ArrayList<>(Arrays.asList(iDE));
+
 
         //Array Adapter for Language
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
