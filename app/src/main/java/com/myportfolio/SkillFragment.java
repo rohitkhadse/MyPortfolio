@@ -68,9 +68,14 @@ public class SkillFragment extends Fragment {
 
         list.add(new String("Database and ORM"));
         list.add(new SkillItem("MySQL",R.drawable.rating90));
-        list.add(new SkillItem("Hibernate,",R.drawable.rating60));
+        list.add(new SkillItem("Hibernate",R.drawable.rating60));
         list.add(new SkillItem("AndroidORM",R.drawable.rating70));
         list.add(new SkillItem("FireBase",R.drawable.rating80));
+
+        list.add(new String("Hosting Platform"));
+        list.add(new SkillItem("Digital Ocean",R.drawable.rating90));
+        list.add(new SkillItem("Cloudinary",R.drawable.rating60));
+        list.add(new SkillItem("Google Cloud",R.drawable.rating70));
 
 
         listView.setAdapter(new SkillAdapter(getContext(),list));
