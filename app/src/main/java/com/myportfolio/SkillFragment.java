@@ -2,6 +2,7 @@ package com.myportfolio;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,12 +44,16 @@ public class SkillFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Skills");
+
         if (view == null){
             view = inflater.inflate(R.layout.skill_fragment, container, false);
         }
         else {
             ViewGroup parent  = (ViewGroup)view.getParent();
+            if (parent != null) {
             parent.removeView(view);
+            }
         }
 
         ListView listView = (ListView) view.findViewById(R.id.list_view);
@@ -77,10 +82,23 @@ public class SkillFragment extends Fragment {
         list.add(new SkillItem("Cloudinary",R.drawable.rating60));
         list.add(new SkillItem("Google Cloud",R.drawable.rating70));
 
+        list.add(new String("IDEs"));
+        list.add(new SkillItem("Android Studio",R.drawable.rating90));
+        list.add(new SkillItem("Eclipse",R.drawable.rating90));
+        list.add(new SkillItem("Spring Tool Suite",R.drawable.rating80));
+        list.add(new SkillItem("RStudio",R.drawable.rating60));
+        list.add(new SkillItem("Brackets",R.drawable.rating70));
+        list.add(new SkillItem("NetBeans",R.drawable.rating60));
+
 
         listView.setAdapter(new SkillAdapter(getContext(),list));
         // Inflate the layout for this fragment
         return view;
+    }
+
+    public void onResume(){
+        super.onResume();
+
     }
 
 }

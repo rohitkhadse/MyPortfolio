@@ -40,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
         /*SkillFragment skillFragment = new SkillFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.skill_list_item,skillFragment).commit();
-*/
+    */
     }
 
+    //SET TAB ICONS
     private void setTabIcons(){
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BioFragment(), "BIO");
         adapter.addFragment(new SkillFragment(), "SKILLS");
+        adapter.addFragment(new ProjectFragment(),"PROJECTS");
         viewPager.setAdapter(adapter);
     }
 
@@ -83,5 +85,9 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+    }
+
+    public void setActionBarTitle(String title) {
+        toolbar.setTitle(title);
     }
 }
