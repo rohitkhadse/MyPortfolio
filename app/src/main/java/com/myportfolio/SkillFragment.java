@@ -1,5 +1,8 @@
 package com.myportfolio;
 
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +12,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.myportfolio.adpater.SkillAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SkillFragment extends Fragment {
+
+    private StyleableToast styleableToast;
+    private Context mContext;
 
     private ArrayList<String> mArrayList,j2eeArrayList,webTArrayList,dbORMArrayList,hostArrayList,ideArrayList;
     private View view;
@@ -37,6 +45,7 @@ public class SkillFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this.getActivity().getApplicationContext();
 
     }
 
@@ -44,16 +53,23 @@ public class SkillFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Skills");
+
+         //((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Skills");
+
+
+
+
 
         if (view == null){
             view = inflater.inflate(R.layout.skill_fragment, container, false);
+
         }
         else {
             ViewGroup parent  = (ViewGroup)view.getParent();
             if (parent != null) {
             parent.removeView(view);
             }
+
         }
 
         ListView listView = (ListView) view.findViewById(R.id.list_view);
@@ -99,6 +115,24 @@ public class SkillFragment extends Fragment {
     public void onResume(){
         super.onResume();
 
+
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            styleableToast = new StyleableToast
+                        .Builder(mContext)
+                        .text("Skill")
+                        .textColor(Color.WHITE)
+                        .icon(R.drawable.skills_icon)
+                        .backgroundColor(Color.parseColor("#23ad33"))
+                        .build();
+        styleableToast.show();
+
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Skills");
+        }
     }
 
 }

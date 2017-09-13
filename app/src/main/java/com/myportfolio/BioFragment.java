@@ -1,6 +1,8 @@
 package com.myportfolio;
 
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
@@ -10,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -22,6 +27,8 @@ public class BioFragment extends Fragment {
 
     CircleImageView circleImageView;
     private TextView aboutTextView;
+    private StyleableToast bioToast;
+    private Context bioContext;
 
     public BioFragment() {
         // Required empty public constructor
@@ -30,15 +37,22 @@ public class BioFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        bioContext = this.getActivity().getApplicationContext();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Bio");
+       // ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Bio");
 
+        bioToast = new StyleableToast
+                        .Builder(bioContext)
+                        .text("Bio")
+                        .textColor(Color.WHITE)
+                        .icon(R.drawable.projects_icon)
+                        .backgroundColor(Color.parseColor("#23ad33"))
+                        .build();
 
         final View view = inflater.inflate(R.layout.bio_fragment, container, false);
         // Inflate the layout for this fragment
@@ -55,7 +69,17 @@ public class BioFragment extends Fragment {
 
     public void onResume(){
         super.onResume();
+    }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            if (bioToast != null) {
+                bioToast.show();
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Bio");
+            }
+        }
     }
 
 }

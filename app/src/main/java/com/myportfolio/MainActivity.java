@@ -1,5 +1,6 @@
 package com.myportfolio;
 
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
 
     private int[] tabIcons = {R.drawable.bio_icon,R.drawable.skills_icon};
 
@@ -68,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+            if (position == 1) {
+
+            }
+
+
+
             return mFragmentList.get(position);
         }
 
