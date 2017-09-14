@@ -50,8 +50,9 @@ public class BioFragment extends Fragment {
                         .Builder(bioContext)
                         .text("Bio")
                         .textColor(Color.WHITE)
-                        .icon(R.drawable.projects_icon)
-                        .backgroundColor(Color.parseColor("#23ad33"))
+                        .icon(R.drawable.bio_icon)
+                        .duration(Toast.LENGTH_SHORT)
+                        .backgroundColor(Color.parseColor("#607D8B"))
                         .build();
 
         final View view = inflater.inflate(R.layout.bio_fragment, container, false);

@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             tools:context="com.myportfolio.ContactFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.andexert.library.RippleView
+        android:id="@+id/more"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        rv_centered="true">
+    <ImageView
+        android:id="@+id/linkedin_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/linkedin_icon"
+        android:paddingBottom="20dp"/>
+
+
+    <ImageView
+        android:id="@+id/github_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linkedin_imageview"
+        android:src="@drawable/github_icon"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/contactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/github_imageview"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/my_contact"
+        android:autoLink="phone"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/contactNumber"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/my_email"
+        android:autoLink="email"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    </com.andexert.library.RippleView>
+
+</RelativeLayout>

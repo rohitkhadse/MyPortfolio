@@ -5,6 +5,8 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="my_name">Rohit Khadse</string>
+    <string name="my_contact">(409)728-1343</string>
+    <string name="my_email">rkhadse@lamar.edu</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

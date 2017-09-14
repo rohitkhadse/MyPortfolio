@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
 
-    private int[] tabIcons = {R.drawable.bio_icon,R.drawable.skills_icon};
+    private int[] tabIcons = {R.drawable.bio_icon,R.drawable.skills_icon,R.drawable.projects_icon,
+    R.drawable.contact_icon};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +52,16 @@ public class MainActivity extends AppCompatActivity {
     private void setTabIcons(){
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new BioFragment(), "BIO");
-        adapter.addFragment(new SkillFragment(), "SKILLS");
-        adapter.addFragment(new ProjectFragment(),"PROJECTS");
+        adapter.addFragment(new BioFragment(), "");
+        adapter.addFragment(new SkillFragment(), "");
+        adapter.addFragment(new ProjectFragment(),"");
+        adapter.addFragment(new ContactFragment(),"");
         viewPager.setAdapter(adapter);
     }
 

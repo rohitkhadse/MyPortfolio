@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ProjectFragment extends Fragment {
     private View view;
     private StyleableToast styleableToast;
-    private Context parentContext;
+    private Context projectContext;
 
     public ProjectFragment(){
     }
@@ -27,7 +27,7 @@ public class ProjectFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        parentContext = this.getActivity().getApplicationContext();
+        projectContext = this.getActivity().getApplicationContext();
 
     }
 
@@ -52,6 +52,7 @@ public class ProjectFragment extends Fragment {
 
         plist.add(new ProjectItem("Go Park"));
         plist.add(new ProjectItem("Spider Smasher"));
+        plist.add(new ProjectItem("Portfolio Android App"));
         plist.add(new ProjectItem("Replicated Reliable Banking System in Python"));
         plist.add(new ProjectItem("Analysis and Data Mining of Large Crime data sets"));
         plist.add(new ProjectItem("Middlify Editor"));
@@ -69,15 +70,16 @@ public class ProjectFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
+        if (isVisibleToUser && projectContext!=null) {
             styleableToast = new StyleableToast
-                        .Builder(parentContext)
+                        .Builder(projectContext)
                         .text("Project")
                         .textColor(Color.WHITE)
                         .icon(R.drawable.projects_icon)
-                        .backgroundColor(Color.parseColor("#23ad33"))
+                        .duration(Toast.LENGTH_SHORT)
+                        .backgroundColor(Color.parseColor("#FF5722"))
                         .build();
-        styleableToast.show();
+            styleableToast.show();
 
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Projects");
         }

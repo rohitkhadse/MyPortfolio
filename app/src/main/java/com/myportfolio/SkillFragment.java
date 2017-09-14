@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
@@ -121,12 +122,14 @@ public class SkillFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
+        if (isVisibleToUser && mContext!=null) {
             styleableToast = new StyleableToast
                         .Builder(mContext)
                         .text("Skill")
                         .textColor(Color.WHITE)
                         .icon(R.drawable.skills_icon)
+                        .duration(Toast.LENGTH_SHORT)
+                        .cornerRadius(5)
                         .backgroundColor(Color.parseColor("#23ad33"))
                         .build();
         styleableToast.show();
