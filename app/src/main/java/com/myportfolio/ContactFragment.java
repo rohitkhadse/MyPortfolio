@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 
 public class ContactFragment extends Fragment implements View.OnClickListener {
-    ImageView gitHub,linkedIn;
+    ImageView gitHub,linkedIn,googlePlay;
     private StyleableToast styleableToast;
     private Context contactContext;
 
@@ -40,6 +40,10 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
 
          gitHub = (ImageView)view.findViewById(R.id.github_imageview);
          gitHub.setOnClickListener(this);
+
+         googlePlay = (ImageView)view.findViewById(R.id.playstore_imageview);
+         googlePlay.setOnClickListener(this);
+
 
 
          return view;
@@ -65,10 +69,18 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
                     startActivity(intent);
                     break;
 
+                case R.id.playstore_imageview:
+	                intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Rohit%20Khadse&hl=en"));
+                    startActivity(intent);
+                    break;
+
 	            }
         }
 
-        @Override
+    @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser && contactContext!=null) {
@@ -76,7 +88,7 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
                         .Builder(contactContext)
                         .text("Contact")
                         .textColor(Color.WHITE)
-                        .icon(R.drawable.skills_icon)
+                        .icon(R.drawable.contact_icon)
                         .duration(Toast.LENGTH_SHORT)
                         .cornerRadius(10)
                         .backgroundColor(Color.parseColor("#5C6BC0"))

@@ -7,6 +7,11 @@
     <string name="my_name">Rohit Khadse</string>
     <string name="my_contact">(409)728-1343</string>
     <string name="my_email">rkhadse@lamar.edu</string>
+    <string name="find_me_on"><u>Find Me On</u></string>
+
+    <string name="githun_ps"><i>To see projects,please find my <b>GitHub</b> link in contact tab</i></string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
