@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,13 +58,19 @@ public class BioFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.bio_fragment, container, false);
         // Inflate the layout for this fragment
-        aboutTextView =  (TextView) view.findViewById(R.id.aboutTextView);
+        /*aboutTextView =  (TextView) view.findViewById(R.id.aboutTextView);
         String htmlText = "I am an ORACLE Certified Java Developer with 3 years of experience" +
                           "in development of the web and mobile applications in Java,Spring," +
                           "Spring MVC, Spring boot Hibernate. Android, MySQL, HTML5 and JavaScript." +
                           "Currently, works as Software/Mobile Developer Intern in the startup.</p>";
-        aboutTextView.setText(Html.fromHtml(htmlText));
+        aboutTextView.setText(Html.fromHtml(htmlText));*/
 
+        JustifiedTextView myMsg = (JustifiedTextView)view.findViewById(R.id.t1);
+        myMsg.setText("ORACLE Certified Java Developer with 3 years of Professional experience in " +
+                "development of the web and mobile applications.Worked as a Software and Mobile " +
+                "Developer intern for a startup while pursuing Masters in Science in Computer Science" +
+                " from Lamar University, Texas. In Depth knowledge of technologies including Java, " +
+                "Spring MVC, Spring Boot, Hibernate. Android, REST,JAX-RS,MySQL, HTML5 and JavaScript, API Integration.");
         return view;
 
     }

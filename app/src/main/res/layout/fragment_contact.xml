@@ -10,7 +10,7 @@
         android:id="@+id/more"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="5sp"
         android:gravity="center"
         rv_centered="true">
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
+        android:paddingTop="10sp"
         android:paddingBottom="10dp"
         android:text="@string/find_me_on"
         android:textSize="30sp"
@@ -33,7 +33,7 @@
         android:layout_below="@+id/findmeon"
         android:layout_centerHorizontal="true"
         android:src="@drawable/play_store_icon"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10sp"/>
 
     <ImageView
         android:id="@+id/linkedin_imageview"
@@ -42,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/playstore_imageview"
         android:src="@drawable/linkedin_icon"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10sp"/>
 
 
     <ImageView
@@ -52,8 +52,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/linkedin_imageview"
         android:src="@drawable/github_icon"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"/>
 
     <TextView
         android:id="@+id/contactNumber"
@@ -61,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/github_imageview"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
         android:text="@string/my_contact"
         android:autoLink="phone"
         android:textSize="20sp"
@@ -74,8 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/contactNumber"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
         android:text="@string/my_email"
         android:autoLink="email"
         android:textSize="20sp"
