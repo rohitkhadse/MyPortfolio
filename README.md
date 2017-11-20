@@ -5,10 +5,14 @@ To build this app I used Fragments, ListView and many other android libraries li
 ripple effect, StyleableToast ,circular imageview etc.
 
 Screenshots:
-![Alt text](/Screenshots/Portfolio%201.png?raw=true "Bio Fragment")
+### Bio Fragment
+<img src = "/Screenshots/Portfolio%201.png" width="150">
 
-![Alt text](/Screenshots/Portfolio%202.png?raw=true "Skills Fragment")
+### Skills Fragment
+<img src = "/Screenshots/Portfolio%202.png" width="150">
 
-![Alt text](/Screenshots/Portfolio%203.png?raw=true "Project Fragment")
+### Project Fragment
+<img src = "/Screenshots/Portfolio%203.png" width="150">
 
-![Alt text](/Screenshots/Portfolio%204.png?raw=true "Contact Fragment")
+### Contact Fragment
+<img src = "/Screenshots/Portfolio%204.png" width="150">
