@@ -14,6 +14,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.myportfolio.adpater.SkillAdapter;
 
@@ -24,6 +26,8 @@ public class SkillFragment extends Fragment {
 
     private StyleableToast styleableToast;
     private Context mContext;
+    AdView mAdView;
+    AdRequest mAdRequest;
 
     private ArrayList<String> mArrayList,j2eeArrayList,webTArrayList,dbORMArrayList,hostArrayList,ideArrayList;
     private View view;
@@ -109,6 +113,11 @@ public class SkillFragment extends Fragment {
 
 
         listView.setAdapter(new SkillAdapter(getContext(),list));
+
+        mAdView = (AdView)view.findViewById(R.id.adView3);
+        mAdRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+
+        mAdView.loadAd(mAdRequest);
         // Inflate the layout for this fragment
         return view;
     }

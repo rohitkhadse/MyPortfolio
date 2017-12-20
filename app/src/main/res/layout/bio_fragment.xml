@@ -47,7 +47,7 @@
     <ImageView
         android:id="@+id/oracle_cirtification"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70sp"
         android:layout_below="@+id/profile_name_textView"
         android:layout_centerHorizontal="true"
         android:src="@drawable/ocpjp"
@@ -59,11 +59,21 @@
         android:id="@+id/t1"
         android:padding="10sp"
         android:layout_below="@+id/oracle_cirtification"
+        android:layout_above="@+id/adView2"
         android:textColor="#303336"
         android:textSize="15sp"
     />
 
-
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2365197357688642/3316781376" >
+    </com.google.android.gms.ads.AdView>
 
 
 </RelativeLayout>

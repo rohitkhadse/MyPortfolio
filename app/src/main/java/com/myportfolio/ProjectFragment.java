@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.myportfolio.adpater.ProjectAdapter;
 
@@ -20,6 +22,8 @@ public class ProjectFragment extends Fragment {
     private View view;
     private StyleableToast styleableToast;
     private Context projectContext;
+    AdView mAdView;
+    AdRequest mAdRequest;
 
     public ProjectFragment(){
     }
@@ -58,6 +62,11 @@ public class ProjectFragment extends Fragment {
         plist.add(new ProjectItem("Middlify Editor"));
 
         listView.setAdapter(new ProjectAdapter(getContext(),plist));
+
+        mAdView = (AdView)view.findViewById(R.id.adView4);
+        mAdRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+
+        mAdView.loadAd(mAdRequest);
 
         return view;
     }

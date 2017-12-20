@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
@@ -30,6 +32,8 @@ public class BioFragment extends Fragment {
     private TextView aboutTextView;
     private StyleableToast bioToast;
     private Context bioContext;
+    AdView mAdView;
+    AdRequest mAdRequest;
 
     public BioFragment() {
         // Required empty public constructor
@@ -46,6 +50,8 @@ public class BioFragment extends Fragment {
                              Bundle savedInstanceState) {
 
        // ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Bio");
+
+
 
         bioToast = new StyleableToast
                         .Builder(bioContext)
@@ -71,6 +77,11 @@ public class BioFragment extends Fragment {
                 "Developer intern for a startup while pursuing Masters in Science in Computer Science" +
                 " from Lamar University, Texas. In Depth knowledge of technologies including Java, " +
                 "Spring MVC, Spring Boot, Hibernate. Android, REST,JAX-RS,MySQL, HTML5 and JavaScript, API Integration.");
+
+        mAdView = (AdView)view.findViewById(R.id.adView2);
+        mAdRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+
+        mAdView.loadAd(mAdRequest);
         return view;
 
     }
