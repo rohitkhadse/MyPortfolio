@@ -1,6 +1,6 @@
 package com.myportfolio;
 
-import android.graphics.Color;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.muddzdev.styleabletoastlibrary.StyleableToast;
+
 
 import java.util.ArrayList;
 import java.util.List;

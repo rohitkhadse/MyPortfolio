@@ -60,10 +60,10 @@ public class ProjectAdapter extends BaseAdapter {
 
         if (getItemViewType(i) == PROJECT_ITEM) {
             TextView projectName = (TextView) view.findViewById(R.id.projectsNameItem);
-            //TextView projectDetail = (TextView) view.findViewById(R.id.projectDetailItem);
+            TextView projectDetail = (TextView) view.findViewById(R.id.projectDetailItem);
 
             projectName.setText(((ProjectItem) list.get(i)).getPname());
-            //projectDetail.setText(((ProjectItem) list.get(i)).getPdetail());
+            projectDetail.setText(((ProjectItem) list.get(i)).getPdetail());
         }
 
         return view;

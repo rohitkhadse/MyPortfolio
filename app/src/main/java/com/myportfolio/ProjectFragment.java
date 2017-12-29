@@ -54,12 +54,27 @@ public class ProjectFragment extends Fragment {
 
         ArrayList<Object> plist = new ArrayList<>();
 
-        plist.add(new ProjectItem("Go Park"));
-        plist.add(new ProjectItem("Spider Smasher"));
-        plist.add(new ProjectItem("Portfolio Android App"));
-        plist.add(new ProjectItem("Replicated Reliable Banking System in Python"));
-        plist.add(new ProjectItem("Analysis and Data Mining of Large Crime data sets"));
-        plist.add(new ProjectItem("Middlify Editor"));
+//        plist.add(new ProjectItem("Go Park"));
+//        plist.add(new ProjectItem("Spider Smasher"));
+//        plist.add(new ProjectItem("Portfolio Android App"));
+//        plist.add(new ProjectItem("Replicated Reliable Banking System in Python"));
+//        plist.add(new ProjectItem("Analysis and Data Mining of Large Crime data sets"));
+//        plist.add(new ProjectItem("Middlify Editor"));
+
+        plist.add(new ProjectItem("Go Park",
+                "A Parking Rental Android application using Google Maps API"));
+        plist.add(new ProjectItem("Spider Smasher",
+                "Developed native android game in Java and SqlLite as a Database"));
+        plist.add(new ProjectItem("Portfolio Android App",
+                "Personal portfolio app which show skills, project work and android skillset"));
+        plist.add(new ProjectItem("Replicated Reliable Banking System in Python",
+                "Build reliable distributed Banking System which can handle failure of servers"));
+        plist.add(new ProjectItem("Analysis and Data Mining of Large Crime data sets",
+                "Compared and analyzed the extremely large and different data sets using R (R Studio) " +
+                        "and MySQL Workbench by leveraging various visualization techniques like : " +
+                        "K-means, Scatter Plots, Histogram, Heat Map, Bar Graph"));
+        plist.add(new ProjectItem("Middlify Editor",
+                "Middlify is online code editor which lets you align your code around some character"));
 
         listView.setAdapter(new ProjectAdapter(getContext(),plist));
 

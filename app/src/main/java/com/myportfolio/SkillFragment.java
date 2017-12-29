@@ -1,6 +1,6 @@
 package com.myportfolio;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,7 +19,6 @@ import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.myportfolio.adpater.SkillAdapter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SkillFragment extends Fragment {
 
